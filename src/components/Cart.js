@@ -39,7 +39,7 @@ const Cart = () => {
             <div>{coupon === true? "Coupon code applied" : <button onClick={()=>{dispatch(getDiscount())}}>MONEYYAPP</button>}</div>
           </div>
         )}
-        <div>TOTAL AMOUNT: {cart.length === 0 ? 0 : totalAmount.toFixed(2)}</div>
+        <div>TOTAL AMOUNT: ${cart.length === 0 ? 0 : totalAmount.toFixed(2)}</div>
       </div>
     </div>
   )
