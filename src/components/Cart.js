@@ -27,7 +27,7 @@ const Cart = () => {
       </div>
       <div className={styles.orderSummary}>
         <div>ORDER SUMMARY</div>
-        <div>TOTAL AMOUNT: {cart.length === 0 ? 0 : totalAmount}</div>
+        <div>TOTAL AMOUNT: {cart.length === 0 ? 0 : totalAmount.toFixed(2)}</div>
       </div>
     </div>
   )
