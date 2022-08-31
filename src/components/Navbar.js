@@ -5,10 +5,13 @@ import styles from './Navbar.module.css'
 const Navbar = () => {
   return (
     <>
+    <div className={styles.coupon}>
+      <span>Use code:<b>MONEYYAPP</b> to get $10 discount</span>
+    </div>
     <nav className={styles.nav}>
-    <div>E-commerce App</div>
-    <NavLink to='/'>Products</NavLink>
-    <NavLink to='/cart'>Cart</NavLink>
+      <div><b>E-commerce App</b></div>
+      <NavLink to='/'>Products</NavLink>
+      <NavLink to='/cart'>Cart</NavLink>
     </nav>
     <hr />
     </>

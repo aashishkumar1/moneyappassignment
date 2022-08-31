@@ -2,7 +2,8 @@ import * as types from './actionTypes';
 
 const initialState = {
     cart: [],
-    totalAmount:0
+    totalAmount:0,
+    coupon:false
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -39,6 +40,7 @@ const productsReducer = (state = initialState, action) => {
                ...state,
                cart: pay,
                totalAmount: state.totalAmount + payload.price,
+               coupon:false
             }
         case types.REMOVE_DATA_FROM_CART:
 
@@ -48,6 +50,18 @@ const productsReducer = (state = initialState, action) => {
                 cart: [...newCart],
                 totalAmount: state.totalAmount - (payload.price*payload.quantity),
             }
+        case types.GET_DISCOUNT:
+
+                return {
+                    ...state,
+                    totalAmount: state.totalAmount - 10,
+                    coupon:true
+                }
+        case types.TOTAL_AMOUNT:
+                    return {
+                        ...state,
+                        totalAmount:0,
+                    }
         default :
             return state;   
     }

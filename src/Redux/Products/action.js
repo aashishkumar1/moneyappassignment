@@ -13,4 +13,14 @@ const removeDataFromCartHandler = (payload) => {
         payload
     }
 }
-export {addDataInCartHandler,removeDataFromCartHandler};
+const getDiscount = () => {
+    return {
+        type: types.GET_DISCOUNT,
+    }
+}
+const totalAmoun = () => {
+    return {
+        type: types.TOTAL_AMOUNT,
+    }
+}
+export {addDataInCartHandler,removeDataFromCartHandler,getDiscount,totalAmoun};

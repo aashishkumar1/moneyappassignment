@@ -1,14 +1,20 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux';
-import { removeDataFromCartHandler } from '../Redux/Products/action';
+import { getDiscount, removeDataFromCartHandler, totalAmoun } from '../Redux/Products/action';
 import styles from './Cart.module.css'
 
 const Cart = () => {
   const cart = useSelector(state=> state.cart);
-  console.log(cart)
+  const coupon = useSelector(state=> state.coupon);
   const totalAmount = useSelector(state=> state.totalAmount);
   const dispatch = useDispatch();
-
+  if(cart.length ===0)
+  {
+    const ctx = ()=>{
+      dispatch(totalAmoun())
+    }
+    ctx();
+  }
 
   return (
     <div className={styles.cart}>
@@ -27,6 +33,12 @@ const Cart = () => {
       </div>
       <div className={styles.orderSummary}>
         <div>ORDER SUMMARY</div>
+        {cart.length > 0 && (
+          <div className={styles.discount}>
+            <div>Get Discount of $10: </div>
+            <div>{coupon === true? "Coupon code applied" : <button onClick={()=>{dispatch(getDiscount())}}>MONEYYAPP</button>}</div>
+          </div>
+        )}
         <div>TOTAL AMOUNT: {cart.length === 0 ? 0 : totalAmount.toFixed(2)}</div>
       </div>
     </div>
