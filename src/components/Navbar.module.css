@@ -2,12 +2,18 @@
     display: grid;
     grid-template-columns: 10% 10% 10%;
     grid-gap:5%;
+    background-color: blanchedalmond;
+    padding: 1%;
+    font-size: 20px;
 }
 .nav > div{
     font-size: 15px;
     font-family:cursive;
     font-weight: bold;
-
+}
+.link{
+    text-decoration: none;
+    font-weight: bold;
 }
 .coupon{
     width:50%;

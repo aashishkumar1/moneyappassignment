@@ -10,8 +10,8 @@ const Navbar = () => {
     </div>
     <nav className={styles.nav}>
       <div><b>E-commerce App</b></div>
-      <NavLink to='/'>Products</NavLink>
-      <NavLink to='/cart'>Cart</NavLink>
+      <NavLink className={styles.link} to='/'>Products</NavLink>
+      <NavLink className={styles.link} to='/cart'>Cart</NavLink>
     </nav>
     <hr />
     </>

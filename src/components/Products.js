@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { useDispatch} from 'react-redux'
 import styles from './Products.module.css'
 import { addDataInCartHandler } from '../Redux/Products/action';
@@ -33,4 +33,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Products;
